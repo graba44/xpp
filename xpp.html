@@ -75,7 +75,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px;
+    padding: 20px;
   }
   </style>
 
@@ -103,13 +103,13 @@ function animateHearts() {
 
   container.style.overflow = 'hidden';
 
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 40; i++) {
     const heart = document.createElement('span');
     heart.innerHTML = '❤';
     heart.style.position = 'absolute';
     heart.style.opacity = '0';
     heart.style.color = 'red';
-    heart.style.fontSize = (Math.random() * 25 + 17) + 'px';
+    heart.style.fontSize = (Math.random() * 30 + 10) + 'px';
     heart.style.zIndex = '-1';
 
     let isInside = true;
