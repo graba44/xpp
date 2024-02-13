@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Will you be My Valentine?</title>
+  <title>❤</title>
 
   <style>
     body {
@@ -109,7 +109,7 @@ function animateHearts() {
     heart.style.position = 'absolute';
     heart.style.opacity = '0';
     heart.style.color = 'red';
-    heart.style.fontSize = (Math.random() * 30 + 15) + 'px';
+    heart.style.fontSize = (Math.random() * 25 + 17) + 'px';
     heart.style.zIndex = '-1';
 
     let isInside = true;
@@ -139,6 +139,8 @@ function animateHearts() {
 
 }
 
+var mouseOverCount = 0;
+
 function moveButton() {
     var button = document.getElementById('noButton');
     button.style.position = 'absolute';
@@ -149,18 +151,24 @@ function moveButton() {
     var newY = Math.floor(Math.random() * maxY);
     button.style.left = newX + 'px';
     button.style.top = newY + 'px';
+
+    mouseOverCount++;
+
+    if (mouseOverCount >= 5) {
+        button.style.display = 'none';
+    }
 }
 
 function increaseFontSize() {
     var question = document.querySelector('.question');
     var questionFontSize = window.getComputedStyle(question).fontSize;
-    var newFontSize = parseInt(questionFontSize) + 3 + 'px';
+    var newFontSize = parseInt(questionFontSize) + 2 + 'px';
     question.style.fontSize = newFontSize;
 
     var yesButton = document.querySelector('#yesButton');
     console.log(yesButton)
     var yesButtonFontSize = window.getComputedStyle(yesButton).fontSize;
-    var newFontSize2 = parseInt(yesButtonFontSize) + 3 + 'px';
+    var newFontSize2 = parseInt(yesButtonFontSize) + 2 + 'px';
     yesButton.style.fontSize = newFontSize2;
   }
 
